@@ -13,4 +13,8 @@ public class MainViewModel extends BaseObservable {
     public String getStatusString() {
         return statusString;
     }
+
+    public String getLoginLogInOutText() {
+        return mLoggedIn ? "Log out" : "Log in";
+    }
 }
