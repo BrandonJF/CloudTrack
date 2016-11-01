@@ -33,8 +33,9 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{viewModel.getLoadButtonText}"
+            android:text="@{viewModel.loadButtonText}"
             android:id="@+id/loadDataButton"
+            android:onClick="@{viewModel::onLoadButtonClicked}"
             app:layout_constraintLeft_toLeftOf="@+id/textView"
             app:layout_constraintRight_toRightOf="@+id/textView"
             app:layout_constraintBottom_toBottomOf="parent"
