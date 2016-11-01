@@ -11,6 +11,8 @@ import java.util.Properties;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
+import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
  * Created by brandon on 10/31/16.
@@ -21,6 +23,7 @@ public class CloudTrackApp extends Application {
     public static CloudTrackApp mInstance;
     private Retrofit mRetrofit;
     private Properties mProperties;
+    private final String SOUNDCLOUD_BASE_URL =  "https://api.soundcloud.com";
 
     @Override
     public void onCreate() {
@@ -33,6 +36,10 @@ public class CloudTrackApp extends Application {
             Log.e(TAG, "Exception: ", e);
         }
         setupRetrofit();
+    }
+
+    public static CloudTrackApp getInstance() {
+        return mInstance;
     }
 
     public Properties getProperties() {
@@ -65,5 +72,13 @@ public class CloudTrackApp extends Application {
             httpClient.addInterceptor(logging);
         }
 
+        mRetrofit = new Retrofit.Builder().baseUrl(SOUNDCLOUD_BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+                .build();
+    }
+
+    public Retrofit getRetrofit() {
+        return mRetrofit;
     }
 }
