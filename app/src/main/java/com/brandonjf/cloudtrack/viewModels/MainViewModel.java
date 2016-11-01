@@ -7,4 +7,10 @@ import android.databinding.BaseObservable;
  */
 
 public class MainViewModel extends BaseObservable {
+    private boolean mLoggedIn;
+    private final String statusString = "You are not logged in.";
+
+    public String getStatusString() {
+        return statusString;
+    }
 }
