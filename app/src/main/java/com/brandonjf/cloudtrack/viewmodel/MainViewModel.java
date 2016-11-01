@@ -1,4 +1,4 @@
-package com.brandonjf.cloudtrack.viewModels;
+package com.brandonjf.cloudtrack.viewmodel;
 
 import android.databinding.BaseObservable;
 

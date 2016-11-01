@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.brandonjf.cloudtrack.databinding.ActivityMainBinding;
-import com.brandonjf.cloudtrack.viewModels.MainViewModel;
+import com.brandonjf.cloudtrack.viewmodel.MainViewModel;
 
 public class MainActivity extends AppCompatActivity {
 
