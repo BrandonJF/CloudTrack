@@ -17,10 +17,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{viewModel.statusString}"
+            android:text="@{viewModel.username}"
             android:id="@+id/textView"
             tools:text="@string/app_name"
-            app:layout_constraintBottom_toTopOf="@+id/button"
+            app:layout_constraintBottom_toTopOf="@+id/loadDataButton"
             android:layout_marginBottom="8dp"
             android:layout_marginStart="8dp"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -33,8 +33,8 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{viewModel.loginLogInOutText}"
-            android:id="@+id/button"
+            android:text="@{viewModel.getLoadButtonText}"
+            android:id="@+id/loadDataButton"
             app:layout_constraintLeft_toLeftOf="@+id/textView"
             app:layout_constraintRight_toRightOf="@+id/textView"
             app:layout_constraintBottom_toBottomOf="parent"
